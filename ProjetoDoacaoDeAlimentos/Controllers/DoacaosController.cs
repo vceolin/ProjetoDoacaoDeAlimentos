@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,6 +51,16 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            ViewBag.Doador = new SelectList(_context.Doador, "ID", "Email");
+            ViewBag.Distribuidor = new SelectList(_context.Distribuidor, "ID", "Email");
+            IEnumerable items = new []
+            { 
+                new { key = "Reservado", value = status.RESERVADO },
+                new { key = "Aguardando Distribuidora", value = status.AGUARDANDO_DISTRIBUIDORA },
+                new { key = "Doação Realizada", value = status.DOACAO_REALIZADA },
+            };
+            ViewBag.Status = new SelectList(items, "value", "key");
+
             return View();
         }
 
@@ -74,6 +85,16 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Doador = new SelectList(_context.Doador, "ID", "Email");
+            ViewBag.Distribuidor = new SelectList(_context.Distribuidor, "ID", "Email");
+            IEnumerable items = new[]
+            {
+                new { key = "Reservado", value = status.RESERVADO },
+                new { key = "Aguardando Distribuidora", value = status.AGUARDANDO_DISTRIBUIDORA },
+                new { key = "Doação Realizada", value = status.DOACAO_REALIZADA },
+            };
+            ViewBag.Status = new SelectList(items, "value", "key");
+
             if (id == null)
             {
                 return NotFound();

@@ -50,6 +50,8 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            ViewBag.Doacao = new SelectList(_context.Doacao, "ID", "ID");
+
             return View();
         }
 
@@ -73,6 +75,8 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Doacao = new SelectList(_context.Doacao, "ID", "ID");
+
             if (id == null)
             {
                 return NotFound();

@@ -13,6 +13,6 @@
         public int DoadorID { get;set; }
         public int DistribuidorID { get; set; }
         public status Status { get; set; }
-        public virtual ICollection<Alimento> Alimentos { get; set; }
+        public virtual ICollection<Alimento>? Alimentos { get; set; }
     }
 }

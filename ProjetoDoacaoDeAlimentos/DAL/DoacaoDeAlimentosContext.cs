@@ -9,6 +9,8 @@ namespace ProjetoDoacaoDeAlimentos.DAL
 
         public DoacaoDeAlimentosContext() : base("DoacaoDeAlimentosContext")
         {
+            Database.SetInitializer<DoacaoDeAlimentosContext>(new CreateDatabaseIfNotExists<DoacaoDeAlimentosContext>());
+            Database.Initialize(true);
         }
 
         public DbSet<Alimento> Alimentos { get; set; }
