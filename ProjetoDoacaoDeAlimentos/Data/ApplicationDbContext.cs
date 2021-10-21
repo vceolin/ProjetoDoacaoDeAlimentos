@@ -14,5 +14,6 @@ namespace ProjetoDoacaoDeAlimentos.Data
         public DbSet<ProjetoDoacaoDeAlimentos.Models.Distribuidor> Distribuidor { get; set; }
         public DbSet<ProjetoDoacaoDeAlimentos.Models.Doacao> Doacao { get; set; }
         public DbSet<ProjetoDoacaoDeAlimentos.Models.Doador> Doador { get; set; }
+        public DbSet<ProjetoDoacaoDeAlimentos.Models.Recebedor> Recebedor { get; set; }
     }
 }

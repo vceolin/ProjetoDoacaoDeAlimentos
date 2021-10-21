@@ -15,6 +15,7 @@ namespace ProjetoDoacaoDeAlimentos.DAL
         public DbSet<Distribuidor> Distribuidors { get; set; }
         public DbSet<Doacao> Doacaos { get; set; }
         public DbSet<Doador> Doadors { get; set; }
+        public DbSet<Recebedor> Recebedors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

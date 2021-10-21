@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,22 +10,22 @@ using ProjetoDoacaoDeAlimentos.Models;
 
 namespace ProjetoDoacaoDeAlimentos.Controllers
 {
-    public class AlimentosController : Controller
+    public class RecebedorsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public AlimentosController(ApplicationDbContext context)
+        public RecebedorsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Alimentos
+        // GET: Recebedors
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Alimento.ToListAsync());
+            return View(await _context.Recebedor.ToListAsync());
         }
 
-        // GET: Alimentos/Details/5
+        // GET: Recebedors/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,39 +33,39 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
                 return NotFound();
             }
 
-            var alimento = await _context.Alimento
+            var recebedor = await _context.Recebedor
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (alimento == null)
+            if (recebedor == null)
             {
                 return NotFound();
             }
 
-            return View(alimento);
+            return View(recebedor);
         }
 
-        // GET: Alimentos/Create
+        // GET: Recebedors/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Alimentos/Create
+        // POST: Recebedors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,DoacaoID,Nome,Tipo,Validade,Observacoes")] Alimento alimento)
+        public async Task<IActionResult> Create([Bind("ID,Email,Cnpj,Endereco")] Recebedor recebedor)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(alimento);
+                _context.Add(recebedor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(alimento);
+            return View(recebedor);
         }
 
-        // GET: Alimentos/Edit/5
+        // GET: Recebedors/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +73,22 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
                 return NotFound();
             }
 
-            var alimento = await _context.Alimento.FindAsync(id);
-            if (alimento == null)
+            var recebedor = await _context.Recebedor.FindAsync(id);
+            if (recebedor == null)
             {
                 return NotFound();
             }
-            return View(alimento);
+            return View(recebedor);
         }
 
-        // POST: Alimentos/Edit/5
+        // POST: Recebedors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,DoacaoID,Nome,Tipo,Validade,Observacoes")] Alimento alimento)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Email,Cnpj,Endereco")] Recebedor recebedor)
         {
-            if (id != alimento.ID)
+            if (id != recebedor.ID)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
             {
                 try
                 {
-                    _context.Update(alimento);
+                    _context.Update(recebedor);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AlimentoExists(alimento.ID))
+                    if (!RecebedorExists(recebedor.ID))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(alimento);
+            return View(recebedor);
         }
 
-        // GET: Alimentos/Delete/5
+        // GET: Recebedors/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,30 +124,30 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
                 return NotFound();
             }
 
-            var alimento = await _context.Alimento
+            var recebedor = await _context.Recebedor
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (alimento == null)
+            if (recebedor == null)
             {
                 return NotFound();
             }
 
-            return View(alimento);
+            return View(recebedor);
         }
 
-        // POST: Alimentos/Delete/5
+        // POST: Recebedors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var alimento = await _context.Alimento.FindAsync(id);
-            _context.Alimento.Remove(alimento);
+            var recebedor = await _context.Recebedor.FindAsync(id);
+            _context.Recebedor.Remove(recebedor);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AlimentoExists(int id)
+        private bool RecebedorExists(int id)
         {
-            return _context.Alimento.Any(e => e.ID == id);
+            return _context.Recebedor.Any(e => e.ID == id);
         }
     }
 }
