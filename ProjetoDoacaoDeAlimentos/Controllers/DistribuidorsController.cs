@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +21,14 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Distribuidors
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Distribuidor.ToListAsync());
         }
 
         // GET: Distribuidors/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +47,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Distribuidors/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +58,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("ID,Email,Cnpj,Endereco")] Distribuidor distribuidor)
         {
             if (ModelState.IsValid)
@@ -66,6 +71,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Distribuidors/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +92,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Email,Cnpj,Endereco")] Distribuidor distribuidor)
         {
             if (id != distribuidor.ID)
@@ -117,6 +124,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Distribuidors/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,6 +144,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
 
         // POST: Distribuidors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

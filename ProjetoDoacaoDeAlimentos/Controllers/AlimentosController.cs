@@ -21,12 +21,14 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Alimentos
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Alimento.ToListAsync());
         }
 
         // GET: Alimentos/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,6 +47,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Alimentos/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -67,6 +70,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Alimentos/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,6 +91,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("ID,DoacaoID,Nome,Tipo,Validade,Observacoes")] Alimento alimento)
         {
             if (id != alimento.ID)
@@ -118,6 +123,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         }
 
         // GET: Alimentos/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,6 +144,7 @@ namespace ProjetoDoacaoDeAlimentos.Controllers
         // POST: Alimentos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var alimento = await _context.Alimento.FindAsync(id);
