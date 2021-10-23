@@ -1,3 +1,9 @@
 
 *.dll
 *.dll
+ProjetoDoacaoDeAlimentos/obj/staticwebassets.pack.sentinel
+*.pdb
+.vs/ProjetoDoacaoDeAlimentos/v17/HierarchyCache.v1.txt
+.vs/ProjetoDoacaoDeAlimentos/v17/.suo
+.vs/ProjetoDoacaoDeAlimentos/v17/.futdcache.v1
+.vs/ProjetoDoacaoDeAlimentos/DesignTimeBuild/.dtbcache.v2
