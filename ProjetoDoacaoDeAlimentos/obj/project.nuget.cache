@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PZ7zEzrsoFGOseLUoNA/94L+mvN988OFZq3BnbPtHtSsWpTzn9QFWbTSFLDEZ3IYvRzHL38Qw0puOAnkq0K8tg==",
+  "dgSpecHash": "r3r0GTsvGf0JUNuGcDj2vK7vuqW32FMdJe/dcY0WlEqEEq/FDev+L67FQJ3bSIupT1q2aaZJpz8d8d7iwmk8Lg==",
   "success": true,
   "projectFilePath": "C:\\Users\\vceol\\source\\repos\\ProjetoDoacaoDeAlimentos\\ProjetoDoacaoDeAlimentos\\ProjetoDoacaoDeAlimentos.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\vceol\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\vceol\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\vceol\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\vceol\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\6.0.0\\microsoft.aspnetcore.authentication.facebook.6.0.0.nupkg.sha512",
+    "C:\\Users\\vceol\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.0\\microsoft.aspnetcore.authentication.google.6.0.0.nupkg.sha512",
     "C:\\Users\\vceol\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0-rc.2.21480.10\\microsoft.aspnetcore.cryptography.internal.6.0.0-rc.2.21480.10.nupkg.sha512",
     "C:\\Users\\vceol\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0-rc.2.21480.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0-rc.2.21480.10.nupkg.sha512",
     "C:\\Users\\vceol\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.0-rc.2.21480.10\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.0-rc.2.21480.10.nupkg.sha512",

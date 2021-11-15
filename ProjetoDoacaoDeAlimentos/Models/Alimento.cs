@@ -8,7 +8,5 @@
         public string Tipo { get; set; }
         public DateTime Validade { get; set; }
         public string? Observacoes { get; set; }
-
-
     }
 }
