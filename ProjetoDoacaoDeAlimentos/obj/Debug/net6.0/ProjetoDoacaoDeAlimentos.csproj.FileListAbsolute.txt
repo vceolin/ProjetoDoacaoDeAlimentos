@@ -281,3 +281,5 @@ C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\bi
 C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\obj\Debug\net6.0\ProjetoDoacaoDeAlimentos.csproj.AssemblyReference.cache
+C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\vceol\source\repos\ProjetoDoacaoDeAlimentos\ProjetoDoacaoDeAlimentos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll

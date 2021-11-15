@@ -15,14 +15,29 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication()
-    .AddGoogle(options =>
+    .AddGoogle(googleOptions =>
     {
         IConfigurationSection googleAuthNSection =
              builder.Configuration.GetSection("Authentication:Google");
 
-        options.ClientId = googleAuthNSection["ClientId"];
-        options.ClientSecret = googleAuthNSection["ClientSecret"];
-    });
+        googleOptions.ClientId = googleAuthNSection["ClientId"];
+        googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
+    })
+    .AddTwitter(twitterOptions =>
+    {
+        IConfigurationSection twitterAuthNSection =
+             builder.Configuration.GetSection("Authentication:Twitter");
+        twitterOptions.ConsumerKey = twitterAuthNSection["ConsumerAPIKey"];
+        twitterOptions.ConsumerSecret = twitterAuthNSection["ConsumerSecret"];
+        twitterOptions.RetrieveUserDetails = true;
+    })
+    .AddMicrosoftAccount(microsoftOptions =>
+    {
+        IConfigurationSection microsoftAuthNSection =
+             builder.Configuration.GetSection("Authentication:Microsoft");
+        microsoftOptions.ClientId = microsoftAuthNSection["ClientId"];
+        microsoftOptions.ClientSecret = microsoftAuthNSection["ClientSecret"];
+    }); ;
 
 
 var app = builder.Build();
