@@ -23,6 +23,7 @@ builder.Services.AddAuthentication()
         googleOptions.ClientId = googleAuthNSection["ClientId"];
         googleOptions.ClientSecret = googleAuthNSection["ClientSecret"];
     })
+    /* twitter will only work in production
     .AddTwitter(twitterOptions =>
     {
         IConfigurationSection twitterAuthNSection =
@@ -30,7 +31,7 @@ builder.Services.AddAuthentication()
         twitterOptions.ConsumerKey = twitterAuthNSection["ConsumerAPIKey"];
         twitterOptions.ConsumerSecret = twitterAuthNSection["ConsumerSecret"];
         twitterOptions.RetrieveUserDetails = true;
-    })
+    })*/
     .AddMicrosoftAccount(microsoftOptions =>
     {
         IConfigurationSection microsoftAuthNSection =
