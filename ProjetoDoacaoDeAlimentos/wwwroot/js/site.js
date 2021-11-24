@@ -5,7 +5,7 @@
 
 function buscaAlimento(nomeAlimento) {
     $.ajax({
-        url: "http://localhost:3000/" + nomeAlimento,
+        url: "https://api-trabalho-tdc.herokuapp.com/v1/imagens/" + nomeAlimento,
         context: document.body,
         success: function (result) {
             $("#imgAlimento").attr("src", result);
